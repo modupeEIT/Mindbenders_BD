@@ -1,0 +1,29 @@
+create database Task005;
+
+use database Task005;
+
+create table mockdata(id INT NOT NULL, first_name VARCHAR(225), last_name VARCHAR(225), email VARCHAR(225), gender VARCHAR(225), City VARCHAR(225), social VARCHAR(225), PRIMARY KEY(ID));
+
+LOAD DATA LOCAL INFILE  '~/Downloads/MOCK_DATA (1).csv' INTO TABLE mockdata FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
+
+
+Q1) Print all employees.
+SELECT * FROM mockdata;
+
+Q2) Print all employees with First_name starting with an A, E, I, O, U.
+SELECT * FROM mockdata WHERE LEFT(first_name, 1) in ('A','E', 'I', 'O', 'U');
+
+Q3) Write a query in SQL to display the first and last name, and city for each employee
+SELECT First_name, Last_name, City FROM mockdata;
+
+Q4) Write a query in SQL to display the first and last name, and city for each employee where is City is Atlanta, New York, Orlando
+SELECT First_name, Last_name, City FROM mockdata WHERE City IN ('Atlanta', 'New York', 'Orlando');
+
+Q5) Count of employees from each city 
+SELECT City, COUNT(*) FROM mockdata GROUP BY City;
+
+Q6) Write a query in SQL to display the first name for all employees
+SELECT First_name FROM mockdata;
+
+Q7) Only show the last 4 digits of the Social.
+SELECT RIGHT(social, 4) FROM mockdata;
