@@ -4,10 +4,9 @@ from tweepy import Stream
 from kafka import SimpleProducer
 from kafka import KafkaClient
 
-ACCESS_TOKEN= "53391472-UZwR7vCTEhsWuqrMGhimEnJ1xW2rRmxYIDPIMCuIu"
-TOKEN_SECRET= "zi9ml88hYzsuKDqzlYgjApk2TPFWcCFgml5Qn7ws9N1rn"
-CONSUMER_KEY= "knb14poGcKpoNdbq6QzNebfzs"
-CONSUMER_SECRET= "aoKZMRHrchhwEI5WUm18MHnCDeX0X2dBgrwj1Mq7Fhw7x37bfM"
+ACCESS_TOKEN= ""
+CONSUMER_KEY= ""
+CONSUMER_SECRET= ""
 TOPIC = "tweets"
 
 class ListenerStream(StreamListener):
